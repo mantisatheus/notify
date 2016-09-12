@@ -7,7 +7,7 @@ add:
 	mantis_notify.js, mantis-notify.css
 
 add: 
-	<notifications max="3"></notifications>
+	'<notifications max="3"></notifications>'
 
 add: 
 
