@@ -6,8 +6,8 @@ needs angularJs 1.4 or >
 add: 
 	mantis_notify.js, mantis-notify.css
 
-add: 
-	'<notifications max="3"></notifications>'
+add directive: 
+	< notifications max="3" ></ notifications > 
 
 add: 
 
