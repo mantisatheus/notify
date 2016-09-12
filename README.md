@@ -3,13 +3,13 @@ Notification center v0.5
 needs angularJs 1.4 or >
 
 
-add 
-	mantis_notify.js, mantis-noyify.css
+add: 
+	mantis_notify.js, mantis-notify.css
 
-add 
+add: 
 	<notifications max="3"></notifications>
 
-add 
+add: 
 
 	'mantisNotify' in angular module	
 
@@ -28,7 +28,7 @@ configure example:
 
 use example:
 
-	Notify.error(['some error'],1000);
+	Notify.error('some error',1000);
 
 template example 'error.html':
 
