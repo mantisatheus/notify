@@ -1,0 +1,7 @@
+.notificationStack {
+  width: 384px;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 10000;
+}
