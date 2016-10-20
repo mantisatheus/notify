@@ -14,20 +14,21 @@
         this.create=function(name,obj,fn) {
 
             var newN=function() {
+                var that=this;
                 var notification=angular.copy(obj);
                 notification.show=true;
                 notification.timeout=notification.timeout || 6000;
                 notification.template=notification.template || '';
                 notification.text=notification.text || '';
                 notification.close=function(id) {
-                    n.notifications.splice(id,1);
+                    that.notifications.splice(id,1);
                 };
                 if (typeof fn == 'function') {fn.apply(notification,arguments)};
-                notification.delay=this.$timeout(function() { 
+                notification.delay=that.$timeout(function() { 
                     notification.show=false;
                 },notification.timeout);
-                this.notifications.push(notification);
-                this.killOld();
+                that.notifications.push(notification);
+                that.killOld();
             };
 
             this[name]=newN;
@@ -50,7 +51,7 @@
 
     });
 
-    notifyModule.directive('notifications', function (Notify) {
+    notifyModule.directive('notifications',['Notify',function(Notify) {
         var dirDefObj={
             replace:true,
             template:
@@ -66,7 +67,7 @@
             }
         };
         return dirDefObj;    
-    });
+    }]);
 
 
 }());
